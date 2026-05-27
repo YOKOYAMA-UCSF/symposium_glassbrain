@@ -4024,7 +4024,7 @@ return Plotly;
   <div id="controls">
     <h1>Spatial expression of interferon-stimulated genes in the human brain, 3D visualization</h1>
     <div class="subtle">
-      This viewer visualizes the expression of 183 interferon-stimulated genes in the healthy human brain, derived from microarray data from the Allen Human Brain Insitute. Gene set expression is visualized via global composite z-scoring. Anatomically, gene set expression was observed to be highest in subcortical regions such as brainstem and white matter, and lowest in the hippocampus and cerebellum.
+      This viewer displays the expression of 183 interferon-stimulated genes in the healthy human brain, derived from microarray data from the Allen Human Brain Insitute. Gene set expression is visualized via global composite z-scoring. Anatomically, gene set expression was observed to be highest in subcortical regions such as brainstem and white matter, and lowest in the hippocampus and cerebellum.
     </div>
     <div id="loadStatus" class="subtle" style="margin-top:4px;font-weight:700;"></div>
     <div id="errorBanner" class="meta" style="display:none; margin-top:6px; color:#8a1f11; background:#fff3f0; border:1px solid #ffd2c7;"></div>
@@ -4116,12 +4116,12 @@ return Plotly;
     </details>
 
     <details class="citations">
-      <summary>Z-scoring methods</summary>
+      <summary>Z-scoring and visualization methods</summary>
       <div class="citationBody"style="white-space: pre-wrap;">Using Allen Human Brain Atlas microarray data from six healthy human donors, we generated global expression z-scores for all probes present in each donor. We then filtered these z-scores to include only probes corresponding to genes in our interferon-stimulated gene set. For each donor, probe-level z-scores belonging to the same gene within a given brain region were averaged to generate a regional gene-level z-score.
 
 Next, gene-level z-scores were averaged across all six donors to generate pan-donor regional z-scores for each gene. Finally, pan-donor gene-level z-scores within each brain region were averaged to generate a single composite regional z-score representing the baseline expression level of the interferon-stimulated gene set within that anatomical region across all donors.
 
-These composite regional z-scores were mapped onto the 3D coordinates of all 3702 brain samples included in the Allen Human Brain Atlas microarray dataset using the corresponding MNI x, y, and z coordinates provided in the original data. Each sample point was associated with one of 413 anatomical brain regions. To visualize regional expression patterns, 3D sample coordinates were colored according to the composite regional z-score of their associated brain region using viridis color palettes. For anatomical visualization, sample coordinates were overlaid onto a 3D human brain mesh generated using nilearn.</div>
+These composite regional z-scores were mapped onto the 3D coordinates of all 3702 brain samples included in the Allen Human Brain Atlas microarray dataset using the corresponding MNI x, y, and z coordinates provided in the original data. Each sample point was associated with one of 413 anatomical brain regions. Right hemisphere data was only present for two of the six donors, resulting in fewer sample points and leading to a sparser visualization of this hemisphere. To visualize regional expression patterns, 3D sample coordinates were colored according to the composite regional z-score of their associated brain region using viridis color palettes. For anatomical visualization, sample coordinates were overlaid onto a 3D human brain mesh generated using nilearn.</div>
     </details>
 
     <div class="footer"><a href="http://yokoyamalab.ucsf.edu" target="_blank" rel="noopener noreferrer">Visit the Yokoyama lab website</a></div>
@@ -4567,7 +4567,7 @@ async function init() {
     relayoutCamera(state.camera);
   });
   document.getElementById('frontView').addEventListener('click', function() {
-    state.camera = { eye: { x: 0.0, y: 1.95, z: 0.42 }, up: { x: 0, y: 0, z: 1 }, center: { x: 0, y: 0, z: 0 } };
+    state.camera = { eye: { x: 0.0, y: -1.95, z: 0.42 }, up: { x: 0, y: 0, z: 1 }, center: { x: 0, y: 0, z: 0 } };
     relayoutCamera(state.camera);
   });
 
